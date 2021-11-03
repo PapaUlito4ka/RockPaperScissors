@@ -15,6 +15,18 @@ public class Main {
             System.out.println("java -jar game.jar rock paper scissors");
             return;
         }
+
+        for (int i = 0; i < args.length - 1; i++) {
+            for (int j = i + 1; j < args.length; j++) {
+                if (args[i].equals(args[j])) {
+                    System.out.println("Each argument should be unique");
+                    System.out.println("Example: ");
+                    System.out.println("java -jar game.jar test1 test2 test3");
+                    return;
+                }
+            }
+        }
+
         Game game = new Game(args);
         game.run();
     }
